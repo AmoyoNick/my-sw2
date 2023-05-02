@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A Time Converter</title>
+  </head>
+  <body>
+    <h1>Time Converter, aka sw2</h1>
+    <p>Put the days here to convert into hours:</p>
+    <input type="number" id="days" onchange="convertDaysToHours()">
+    <p>Hours: <span id="hours"></span></p>
+    
+    <p>Put the hours here to convert to minutes:</p>
+    <input type="number" id="hours2" onchange="convertHoursToMinutes()">
+    <p>Minutes: <span id="minutes"></span></p>
+    
+    <p>Put the minutes her to convert to seconds:</p>
+    <input type="number" id="minutes2" onchange="convertMinutesToSeconds()">
+    <p>Seconds: <span id="seconds"></span></p>
+    
+    <script>
+      function convertDaysToHours() {
+        const days = document.getElementById("days").value;
+        const hours = days * 24;
+        document.getElementById("hours").innerHTML = hours;
+        convertHoursToMinutes();
+      }
+      
+      function convertHoursToMinutes() {
+        const hours = document.getElementById("hours").innerHTML;
+        const minutes = hours * 60;
+        document.getElementById("minutes").innerHTML = minutes;
+        convertMinutesToSeconds();
+      }
+      
+      function convertMinutesToSeconds() {
+        const minutes = document.getElementById("minutes").innerHTML;
+        const seconds = minutes * 60;
+        document.getElementById("seconds").innerHTML = seconds;
+      }
+    </script>
+  </body>
+</html>
